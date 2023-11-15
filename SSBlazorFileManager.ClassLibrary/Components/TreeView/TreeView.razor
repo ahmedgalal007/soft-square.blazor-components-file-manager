@@ -1,0 +1,64 @@
+﻿<link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" rel="stylesheet" type="text/css" />
+<nav class="tree-nav">
+
+    <TreeNode Node="@RootNode" IsRoot="true" />
+</nav>
+
+@code {
+
+    public TreeNodeDto RootNode { get; set; } = new TreeNodeDto();
+    protected override async Task OnInitializedAsync()
+    {
+        RootNode.Nodes = new List<TreeNodeDto>
+        {
+            new TreeNodeDto{Title="The Six Duchies",Icon="i-folder__opened",Nodes = new List<TreeNodeDto>
+            {
+                new TreeNodeDto{Title="The Farseer Trilogy",Icon="i-folder__opened",Nodes = new List<TreeNodeDto>{ }, Items= new List<TreeNodeItem>{ } },
+                new TreeNodeDto{Title="The Tawny Man Trilogy",Icon="i-folder__opened",Nodes = new List<TreeNodeDto>
+                {
+                     new TreeNodeDto{Title="The Tawny Man Trilogy",Icon="i-folder__opened",Nodes = new List<TreeNodeDto>{ },
+                    Items= new List<TreeNodeItem>
+                    {
+                        new TreeNodeItem{Title="folder-open", Icon="i-folder__closed"},
+                        new TreeNodeItem{Title="FOOL'S ERRAND", Icon="i-folder__opened"},
+                        new TreeNodeItem{Title="GOLDEN FOOL", Icon="ion-ios-book"},
+                        new TreeNodeItem{Title="FOOL'S FATEe", Icon="ion-ios-bookmarks"}
+                    }
+                }, new TreeNodeDto{Title="The Tawny Man Trilogy",Icon="i-folder__opened",Nodes = new List<TreeNodeDto>{ },
+                    Items= new List<TreeNodeItem>
+                    {
+                        new TreeNodeItem{Title="folder-open", Icon="i-folder__closed"},
+                        new TreeNodeItem{Title="FOOL'S ERRAND", Icon="i-folder__opened"},
+                        new TreeNodeItem{Title="GOLDEN FOOL", Icon="ion-ios-book"},
+                        new TreeNodeItem{Title="FOOL'S FATEe", Icon="ion-ios-bookmarks"}
+                    }
+                },
+                },
+                    Items= new List<TreeNodeItem>
+                    {
+                        new TreeNodeItem{Title="folder-open", Icon="i-folder__closed"},
+                        new TreeNodeItem{Title="FOOL'S ERRAND", Icon="i-folder__opened"},
+                        new TreeNodeItem{Title="GOLDEN FOOL", Icon="ion-ios-book"},
+                        new TreeNodeItem{Title="FOOL'S FATEe", Icon="ion-ios-bookmarks"}
+                    }
+                },
+                new TreeNodeDto{Title="The Fitz and the Fool Trilogy",Icon="folder__opened",Nodes = new List<TreeNodeDto>{ },
+                    Items= new List<TreeNodeItem>
+                    {
+                        new TreeNodeItem{Title="FOOL'S ASSASSIN", Icon="ion-ios-bookmarks"},
+                        new TreeNodeItem{Title="FOOL'S QUEST", Icon="ion-ios-book"},
+                        new TreeNodeItem{Title="Assassin's Fate", Icon="ion-android-bookmark"}
+                    }
+                    }
+                }
+            },
+            new TreeNodeDto{Title="The Soldier Son trilogy",Icon="folder__opened",
+                Items= new List<TreeNodeItem>
+                {
+                    new TreeNodeItem{Title="SHAMAN'S CROSSING", Icon="ion-edit"},
+                    new TreeNodeItem{Title="FOREST MAGE", Icon="ion-edit"},
+                }
+            },
+        };
+    }
+}

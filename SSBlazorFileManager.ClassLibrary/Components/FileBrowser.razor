@@ -1,5 +1,29 @@
-﻿<h3>File Browser</h3>
+﻿@using SSBlazorFileManager.ClassLibrary.Components.TreeView;
 
+<h3><i class="chevron-right"></i>File Browser</h3>
+<div class="ss-file-manager">
+    <div class="container">
+        <div class="navbar">
+            <TreeView></TreeView>
+        </div>
+        <div class="content">   
+            <div class="ss-file-manager-content-toolbar">
+                <div class="btn icon-btn"><i class="icon i-home"></i> </div>
+
+                <div class="content-search-box">
+                    <div class="input-group">
+                        <input type="text" class="form-input" name="currentPath" placeholder="Search ..." />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="ss-file-manager__content-grid">
+            </div>
+        </div>
+    </div>
+</div>
 @code {
 
 }
+
+

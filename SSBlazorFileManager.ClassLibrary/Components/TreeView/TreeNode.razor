@@ -1,0 +1,49 @@
+﻿
+@if (IsRoot)
+{
+    @foreach (var node in Node.Nodes)
+    {
+        <TreeNode Node="@node" />
+    }
+}else{
+    <details class="tree-nav__item is-expandable">
+        <summary class="tree-nav__item-title">
+            @if (string.IsNullOrWhiteSpace(Node.Icon) is false)
+            {
+                <i class="icon @Node.Icon"></i>
+            }
+            @Node.Title
+        </summary>
+        @foreach (var node in Node.Nodes)
+        {
+            @*<TreeNode Title="@node.Title" Icon="@node.Icon" Items="@node.Items" Children="@node.Nodes" />*@
+            <TreeNode Node="@node" />
+        }
+        <div class="tree-nav__item">
+            @foreach (var item in Node.Items)
+            {
+               <TreeNodeItem Title="@item.Title" Icon="@item.Icon" />
+            }
+        </div>
+        
+    </details>
+}
+
+@code {
+    // [Parameter]
+    // public string Title { get; set; }
+    // [Parameter]
+    // public string Icon { get; set; }
+
+    // [Parameter]
+    // public List<TreeNodeItem> Items { get; set; } = new List<TreeNodeItem>();
+    // [Parameter]
+    // public List<TreeNode> Nodes { get; set; } = new List<TreeNode>();
+
+
+    [Parameter]
+    public TreeNodeDto Node { get; set; }
+
+    [Parameter]
+    public bool IsRoot { get; set; } = false;
+}
