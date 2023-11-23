@@ -19,7 +19,7 @@
   <!-- Add SCSS files to dotnet watch -->
   <ItemGroup>
     <Watch Include="**\*.scss" />
-    <None Update="**\*.css" watch="false" />
+    <!--<None Update="**\*.css" watch="false" />-->
   </ItemGroup>
 
   <!-- Compile SCSS files into CSS -->
@@ -29,12 +29,14 @@
 
   <Target Name="CompileComponentSass" BeforeTargets="CompileGlobalSass">
     <Message Text="Compiling Component SCSS files" Importance="high" />
-    <Exec Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch('%(ComponentScssFiles.Identity)', `.*[/\\]_.*`))" Command="sass --style=compressed --no-source-map --load-path=Styles/Core %(ComponentScssFiles.Identity) %(relativedir)%(filename).css" />
+    <!--<Exec Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch('%(ComponentScssFiles.Identity)', `.*[/\\]_.*`))" Command="sass -1-style=compressed -1-no-source-map -1-load-path=Styles/Core %(ComponentScssFiles.Identity) %(relativedir)%(filename).css" />-->
+    <Exec Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch('%(ComponentScssFiles.Identity)', `.*[/\\]_.*`))" Command="sass  --no-source-map --load-path=Styles/Core %(ComponentScssFiles.Identity) %(relativedir)%(filename).css" />
   </Target>
 
   <Target Name="CompileGlobalSass" BeforeTargets="Compile">
     <Message Text="Compiling global SCSS file" Importance="high" />
-    <Exec Command="sass --style=compressed Styles:Components" />
+    <!--<Exec Command="sass -1-style=compressed Styles:Components" />-->
+    <Exec Command="sass Styles:Components" />
   </Target>
 
 </Project>
