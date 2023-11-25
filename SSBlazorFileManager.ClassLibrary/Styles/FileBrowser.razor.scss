@@ -101,20 +101,7 @@
     }
 }
 
-::deep {
-    ::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-        background-color: #F5F5F5;
-    }
 
-    ::-webkit-scrollbar {
-        width: 6px;
-        background-color: #F5F5F5;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #000000;
-    }
 
     .form-input {
         --bg-color-1: #fff;
@@ -142,12 +129,12 @@
         filter: brightness(97%);
     }
 
-    & .form-input:valid,
-    & .form-input:focus {
+    .form-input:valid,
+    .form-input:focus {
         filter: brightness(100%);
         background: var(--bg-color-1);
         border-color: var(--main-color-1);
     }
-}
+
 
 /*#endregion*/

@@ -913,18 +913,7 @@ ul {
   box-shadow: 2px 1px 7px 0px rgba(122, 122, 122, 0.3);
 }
 
-::deep ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
-}
-::deep ::-webkit-scrollbar {
-  width: 6px;
-  background-color: #F5F5F5;
-}
-::deep ::-webkit-scrollbar-thumb {
-  background-color: #000000;
-}
-::deep .form-input {
+.form-input {
   --bg-color-1: #fff;
   --bg-color-3: red;
   --heading-color: #999;
@@ -941,13 +930,17 @@ ul {
   outline: none;
   transition: 0.3s;
 }
-::deep .form-input::placeholder {
+
+.form-input::placeholder {
   color: var(--text-color);
 }
-::deep .form-input:hover {
+
+.form-input:hover {
   filter: brightness(97%);
 }
-::deep .form-input:valid, ::deep .form-input:focus {
+
+.form-input:valid,
+.form-input:focus {
   filter: brightness(100%);
   background: var(--bg-color-1);
   border-color: var(--main-color-1);
