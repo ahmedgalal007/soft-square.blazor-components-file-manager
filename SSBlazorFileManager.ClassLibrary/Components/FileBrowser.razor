@@ -1,8 +1,6 @@
 ﻿@using SSBlazorFileManager.ClassLibrary.Components.TreeView;
 @using SSBlazorFileManager.ClassLibrary.Components.Cards;
-@using FluentStorage;
-@using FluentStorage.Blobs;
-@using FluentStorage.ConnectionString;
+
 <h3><i class="chevron-right"></i>File Browser</h3>
 <div class="ss-file-manager">
     <div class="container">
@@ -46,8 +44,6 @@
     </div>
 </div>
 @code {
-    static string directory = "";
-    IBlobStorage storage = StorageFactory.Blobs.DirectoryFiles(directory);
 
 }
 
